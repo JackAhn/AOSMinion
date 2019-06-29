@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 398}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -45,7 +45,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 398}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 348}
   m_MaxSize: {x: 22012, y: 10024}
   vertical: 0
-  controlID: 90
+  controlID: 60
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 348}
   m_MaxSize: {x: 4002, y: 8048}
   vertical: 1
-  controlID: 91
+  controlID: 61
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -387,23 +387,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b255faff
-      m_LastClickedID: -371278
-      m_ExpandedIDs: b255faffbe69fafff86afaff9089faff028bfaff3c8cfaff14f9faff420bfbffde3ffbffc27efbff28a5fbffcabbfbff04bdfbff1220fcff6c37fcffd073fcff76a1fcff60a4fcff6ca4fcff18affcfff6befcff4ec0fcffc024fdff3a25fdffd826fdffd4fbffff346b00005a6b00009a6b0000da6b0000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 3a3bffff765affffd4fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Team2NearMinion2(Clone)
+        m_OriginalName: Team2NearMinion2(Clone)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -42730
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 7}
       m_SearchString: 
@@ -486,34 +486,34 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Minion
+    - Assets/Animation
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Minion
+  - Assets/Animation
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Unity\AOSMinion
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d6090000
-    m_LastClickedID: 2518
-    m_ExpandedIDs: 0000000084090000d0090000b20a000000ca9a3b
+    m_SelectedIDs: 4c0b0000
+    m_LastClickedID: 2892
+    m_ExpandedIDs: 00000000ae090000000a0000120b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Minion
+      m_OriginalName: Minion
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 2566
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -527,7 +527,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000084090000
+    m_ExpandedIDs: 00000000ae090000000a0000120b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -558,18 +558,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 1687fdfffc3d0000f83d000000000000622b00007a2d0000be2d000054a3ffff2c670000f4670000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: LongDistanceMinion
-      m_OriginalName: LongDistanceMinion
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 35844
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 8}
     m_CreateAssetUtility:
@@ -693,9 +693,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -3.7785568, y: -17.338537, z: 25.508923}
+    m_Target: {x: 0.9021451, y: -0.22839417, z: 30.494078}
     speed: 2
-    m_Value: {x: -3.7785568, y: -17.338537, z: 25.508923}
+    m_Value: {x: 0.9021451, y: -0.22839417, z: 30.494078}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -723,13 +723,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.308257, y: 0.027961355, z: -0.00906485, w: -0.95084894}
+    m_Target: {x: -0.07938658, y: -0.027511232, z: 0.0021917445, w: -0.9964618}
     speed: 2
-    m_Value: {x: -0.308257, y: 0.027961355, z: -0.00906485, w: -0.95084894}
+    m_Value: {x: -0.07938658, y: -0.027511232, z: 0.0021917445, w: -0.9964618}
   m_Size:
-    m_Target: 45.156883
+    m_Target: 52.693394
     speed: 2
-    m_Value: 45.156883
+    m_Value: 52.693394
   m_Ortho:
     m_Target: 0
     speed: 2

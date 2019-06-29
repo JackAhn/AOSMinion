@@ -26,24 +26,27 @@ public class Team1Manager : MonoBehaviour
         while (!instance.isGameEnd)
         {
 
-            float x = -2f;
+            float objX = -2f;
 
             for (int i = 0; i < 2; i++)
             {
                 GameObject minion = instance.NearMinion;
                 minion.name = "Team1NearMinion" + team1Flag;
-                Instantiate(minion, new Vector3(0, 0, 15f), Quaternion.Euler(0, 180f, 0));
-                //minion.transform.Find("Sword01Free").name = "Team1Sword" + team1Flag;
+                Instantiate(minion, new Vector3(objX, 0, 15f), Quaternion.Euler(0, 180f, 0));
                 team1Flag += 2;
+                objX += 3f;
             }
             yield return new WaitForSeconds(1f);
+
+            objX = -2f;
 
             for (int i = 0; i < 2; i++)
             {
                 GameObject minion = instance.LongDistanceMinion;
                 minion.name = "Team1LongDistanceMinion" + team1Flag;
-                Instantiate(minion, new Vector3(0, 0, 15f), Quaternion.Euler(0, 180f, 0));
+                Instantiate(minion, new Vector3(objX, 0, 15f), Quaternion.Euler(0, 180f, 0));
                 team1Flag += 2;
+                objX += 3f;
             }
             yield return new WaitForSeconds(1f);
 
