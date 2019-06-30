@@ -15,12 +15,16 @@ public class MinionController : MonoBehaviour
     private float attackNearRadius = 2f; //근거리 공격 거리
     private float attackLongRadius = 4f; //원거리 공격 거리
     private float selectattackRadius; //미니언 종류에 따른 공격 거리 설정
+
+    private int NearMinionAttack = 30; //근거리 미니언 공격력
+    private int LongDistanceMinionAttack = 45; //원거리 미니언 공격력
+    private int selectAttack; //미니언 종류에 따른 공격력 설정
+
     private int minionHP;
     private int currentHP;
     private bool isDie = false;
 
     private Animator animator;
-    private Animation animation;
     private Transform target; //챔피언 거리
     private GameObject minionobj;
     private NavMeshAgent agent;
@@ -31,15 +35,15 @@ public class MinionController : MonoBehaviour
     void Awake()
     {
         animator = this.gameObject.GetComponentInChildren<Animator>();
-        animation = gameObject.GetComponentInChildren<Animation>();
         target = PlayerManager.instance.player.transform;
         agent = this.gameObject.GetComponent<NavMeshAgent>();
 
         if (transform.name.Contains("NearMinion"))
         {
-            //minionHP = 220;
-            minionHP = 10; //테스트용 HP
+            minionHP = 220;
+            //minionHP = 10; //테스트용 HP
             selectattackRadius = attackNearRadius;
+            selectAttack = NearMinionAttack;
         }
 
 
@@ -47,6 +51,7 @@ public class MinionController : MonoBehaviour
         {
             minionHP = 130;
             selectattackRadius = attackLongRadius;
+            selectAttack = LongDistanceMinionAttack;
         }
 
         currentHP = minionHP;
@@ -163,14 +168,26 @@ public class MinionController : MonoBehaviour
             {
                 return;
             }
-
-            currentHP -= 10;
+            currentHP -= selectAttack;
             float currentHealthPercent = (float)currentHP / (float)minionHP;
             OnHealthPercentChanged(currentHealthPercent);
         }
 
-        if(currentHP == 0)
+        else if (other.name.Contains("Projectile"))
         {
+            if (transform.name.Substring(0, 5).Equals(other.transform.root.name.Substring(0, 5)))
+            {
+                return;
+            }
+
+            currentHP -= selectAttack;
+            float currentHealthPercent = (float)currentHP / (float)minionHP;
+            OnHealthPercentChanged(currentHealthPercent);
+        }
+
+        if (currentHP <= 0)
+        {
+            Debug.Log("minion die");
             agent.isStopped = true;
             minionState = MinionState.die;
         }
@@ -196,7 +213,7 @@ public class MinionController : MonoBehaviour
                     if (animator)
                     {
                         animator.SetBool("IsWalk", false);
-                        animator.SetTrigger("SetAttack");
+                        animator.SetTrigger("NearAttack");
                     }
                     break;
 
@@ -205,7 +222,7 @@ public class MinionController : MonoBehaviour
                     if (animator)
                     {
                         animator.SetBool("IsWalk", false);
-                        animator.SetTrigger("SetAttack");
+                        animator.SetTrigger("LongAttack");
                     }
                     break;
 
@@ -221,6 +238,15 @@ public class MinionController : MonoBehaviour
             }
             yield return null;
         }
+        yield return new WaitForSeconds(0.2f);
+        while (true)
+        {
+            GameObject obj = GameObject.Find(gameObject.name.Substring(22));
+            if (obj)
+                Destroy(obj);
+            else
+                break;
+        }
         Destroy(gameObject);
         yield return null;
     }
@@ -232,7 +258,7 @@ public class MinionController : MonoBehaviour
         {
             yield return null;
         } while (animation.isPlaying);
-        Destroy(gameObject);
+        yield return null;
     }
 
     private void setMinionRotation(GameObject obj) //미니언 방향 설정
