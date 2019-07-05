@@ -6,7 +6,7 @@ public class Team1Manager : MonoBehaviour
 {
 
     private MinionManager instance;
-    private int team1Flag = 1; //Team1 미니언 -> 홀수 숫자로 보기 쉽게 구분
+    private int team1Flag = 1; //Team1 미니언 -> 홀수 숫자로 보기 쉽게 구분, 굳이 필요 없어서 수정 가능
     private GameObject team1Obj; //Team1Generator GameObject 찾아옴
 
     // Start is called before the first frame update

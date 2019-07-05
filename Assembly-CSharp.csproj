@@ -63,9 +63,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AttackGenerator.cs" />
     <Compile Include="Assets\Scripts\Controllers\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Controllers\HPController.cs" />
     <Compile Include="Assets\Scripts\Controllers\MinionController.cs" />
     <Compile Include="Assets\Scripts\Controllers\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\HPBar.cs" />
     <Compile Include="Assets\Scripts\Manager\MinionManager.cs" />
     <Compile Include="Assets\Scripts\Manager\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Manager\Team1Manager.cs" />
