@@ -6,12 +6,14 @@ public class Team1Manager : MonoBehaviour
 {
 
     private MinionManager instance;
-    private int team1Flag = 1; //Team1 미니언 -> 홀수 숫자로 구분
+    private int team1Flag = 1; //Team1 미니언 -> 홀수 숫자로 보기 쉽게 구분
+    private GameObject team1Obj; //Team1Generator GameObject 찾아옴
 
     // Start is called before the first frame update
     void Start()
     {
         instance = MinionManager.instance;
+        team1Obj = GameObject.Find("Team1");
         StartCoroutine(generateMinion());
     }
 
@@ -25,14 +27,13 @@ public class Team1Manager : MonoBehaviour
     {
         while (!instance.isGameEnd)
         {
-
             float objX = -2f;
 
             for (int i = 0; i < 2; i++)
             {
                 GameObject minion = instance.NearMinion;
                 minion.name = "Team1NearMinion" + team1Flag;
-                Instantiate(minion, new Vector3(objX, 0, 15f), Quaternion.Euler(0, 180f, 0));
+                Instantiate(minion, new Vector3(objX, team1Obj.transform.position.y, team1Obj.transform.position.z), Quaternion.Euler(0, 180f, 0));
                 team1Flag += 2;
                 objX += 3f;
             }
@@ -44,7 +45,7 @@ public class Team1Manager : MonoBehaviour
             {
                 GameObject minion = instance.LongDistanceMinion;
                 minion.name = "Team1LongDistanceMinion" + team1Flag;
-                Instantiate(minion, new Vector3(objX, 0, 15f), Quaternion.Euler(0, 180f, 0));
+                Instantiate(minion, new Vector3(objX, team1Obj.transform.position.y, team1Obj.transform.position.z), Quaternion.Euler(0, 180f, 0));
                 team1Flag += 2;
                 objX += 3f;
             }
